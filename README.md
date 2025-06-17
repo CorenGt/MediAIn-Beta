@@ -235,5 +235,5 @@ For questions, collaborations, or support:
 <div align="center">
   <i>Empowering Healthcare with Artificial Intelligence</i>
   
-  **MediAIn** © 2024
+  **MediAIn** © 2025
 </div>
