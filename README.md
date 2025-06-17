@@ -188,10 +188,10 @@ All models undergo rigorous validation:
 ## 🔬 Research & Development
 
 ### Model Training Details
-- **Dataset Sizes**: 10K+ images per condition
+- **Dataset Sizes**: 450K+ images per condition
 - **Augmentation**: Rotation, flip, zoom, brightness adjustment
-- **Training Time**: 6-12 hours per model on GPU
-- **Hardware**: NVIDIA RTX 3080/4090 GPUs
+- **Training Time**: 3-9 hours per model on GPU
+- **Hardware**: NVIDIA RTX 4000/6000 Ada GPUs
 
 ### Gradient-CAM Integration
 Visual explanations showing which regions of medical images influence model decisions, enhancing interpretability for healthcare professionals.
