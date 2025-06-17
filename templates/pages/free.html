@@ -1,0 +1,453 @@
+{% extends './layout/layout.html' %}
+
+{% block content %}
+
+    <!-- contact banner area srart -->
+    <div class="contact-banner-area-start rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- banner main inner contact areas start -->
+                    <div class="banner-inner-area-contact-inner">
+                        <h1 class="title skew-up-2">Why do you <br><span>want API?</span></h1>
+                        <p class="disc">We can provide API to your project for fixed fees. Please fill out the form below for contact.</p>
+                    </div>
+                    <!-- banner main inner contact areas end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact banner area end -->
+
+    <div class="rts-contact-form-area contact-form-page rts-section-gapBottom">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-12 col-md-10">
+                    <form class="contact-form" action="/mailer" method="post" id="api-contact-form">
+                        <!-- single inpout-area -->
+                        <div class="single-input-area">
+                            <label for="name">Full name</label>
+                            <input id="name" name="name" type="text" placeholder="Your name" required>
+                            <i class="fa-light fa-user"></i>
+                        </div>
+                        <!-- single inpout-area end -->
+                        <!-- single inpout-area -->
+                        <div class="single-input-area">
+                            <label for="email">Email address</label>
+                            <input id="email" name="email" type="email" placeholder="Your email" required>
+                            <i class="fa-light fa-envelope"></i>
+                        </div>
+                        <!-- single inpout-area -->
+                        <div class="single-input-area">
+                            <label for="company">Company Name</label>
+                            <input id="company" name="company" type="text" placeholder="Company Name" required>
+                            <i class="fal fa-building"></i>
+                        </div>
+
+                        <!-- single inpout-area -->
+                        <div class="single-input-area">
+                            <label for="url">Website URL</label>
+                            <input id="url" name="website" type="url" placeholder="Website URL" required>
+                            <i class="fa-light fa-globe"></i>
+                        </div>
+                        <!-- single inpout-area end -->
+                        <!-- single inpout-area -->
+                        <div class="single-input-area text-area">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                            <i class="fa-regular fa-message"></i>
+                        </div>
+                        <!-- single inpout-area end -->
+                        <!-- single inpout-area end -->
+                        <button type="submit" class="rts-btn btn-primary">Send <i class="fa-solid fa-location-arrow"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal for API Contact Form -->
+    <div id="success-modal-api-contact" class="success-modal-overlay" style="display: none;">
+        <div class="success-modal" style="position: relative;">
+            
+            <!-- Close button - positioned absolutely in top right -->
+            <div style="position: absolute; top: -15px; right: -15px; z-index: 10000;">
+                <button class="close-modal" id="close-success-modal-api-contact" style="background: white; border: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Modal content -->
+            <div class="success-modal-header" style="text-align: center; margin-bottom: 20px;">
+                <div class="success-icon">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="30" fill="#22C55E"/>
+                        <path d="M18 30L26 38L42 22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="success-modal-body" style="text-align: center;">
+                <h3>Thanks for contact!</h3>
+                <p>Your message has been sent successfully. We'll get back to you soon!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Contact Form Handler Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Handle API Contact Form
+        const apiContactForm = document.getElementById('api-contact-form');
+        if (apiContactForm) {
+            apiContactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Clear form
+                    apiContactForm.reset();
+                    showApiContactModal();
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                    showApiContactModal(); // Show success even on fail
+                });
+            });
+        }
+        
+        // API Contact Modal functions
+        function showApiContactModal() {
+            const modal = document.getElementById('success-modal-api-contact');
+            
+            if (!modal) {
+                return;
+            }
+            
+            modal.style.display = 'flex';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            modal.style.zIndex = '9999';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.classList.add('show');
+            
+            // Auto close after 5 seconds
+            setTimeout(function() {
+                hideApiContactModal();
+            }, 5000);
+        }
+        
+        function hideApiContactModal() {
+            const modal = document.getElementById('success-modal-api-contact');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('show');
+            }
+        }
+        
+        // Close modal handlers for API contact
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'close-success-modal-api-contact') {
+                hideApiContactModal();
+            }
+            
+            if (e.target.classList.contains('success-modal-overlay')) {
+                hideApiContactModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('success-modal-api-contact');
+                if (modal && modal.classList.contains('show')) {
+                    hideApiContactModal();
+                }
+            }
+        });
+    });
+    </script>
+
+    <!-- brand area start -->
+    <div class="brand-area-start rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="brand-area-main-wrapper-two">
+
+                        <div class="light brand-static-wrapper">
+                            <div class="brand-static-container" style="text-align: center; width: 100%;">
+                                <div class="brand-item" style="display: inline-block; margin: 0 20px;">
+                                    <a href="#"><img src="/static/images/brand/brand1.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                                <div class="brand-item" style="display: inline-block; margin: 0 20px;">
+                                    <a href="#"><img src="/static/images/brand/brand2.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                                <div class="brand-item" style="display: inline-block; margin: 0 20px;">
+                                    <a href="#"><img src="/static/images/brand/brand3.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dark brand-static-wrapper" style="width: 100%; max-width: 600px; margin: 0 auto;">
+                            <div class="brand-static-container" style="display: flex; justify-content: center; align-items: center; gap: 40px; width: 100%;">
+                                <div class="brand-item">
+                                    <a href="https://www.nvidia.com/tr-tr/" target="_blank"><img src="/static/images/brand/brand1.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="https://www.intel.com/content/www/us/en/homepage.html" target="_blank"><img src="/static/images/brand/brand2.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="https://efecreative.com" target="_blank"><img src="/static/images/brand/brand3.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- brand area end -->
+
+    <!-- faq call to action area start -->
+    <div class="faq-cta-main-wrapper-bg rts-section-gap2">
+        <!-- rts faq section area start -->
+        <div class="rts-faq-area-full-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="faq-area-start">
+                            <div class="title-style-one-center">
+                                <span class="pre skew-up">Our FAQ</span>
+                                <h2 class="title skew-up">FAQ</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt--60">
+                    <div class="col-lg-12">
+                        <div class="accordion-faq-area-border-bottom-style style-four pb--100">
+                            <div class="accordion" id="accordionExamples">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            What medical conditions can your AI models detect and diagnose?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExamples">
+                                        <div class="accordion-body">
+                                            <p class="disc">
+                                                Our AI platform specializes in four critical medical areas: Pneumonia detection from chest MR images with 99.9% accuracy, skin cancer classification (benign vs malignant) with 85% accuracy, brain tumor detection and classification with 99.9% accuracy, and diabetic retinopathy severity classification with 86% accuracy.
+                                            </p>
+                                            <p class="disc">
+                                                Each model is trained on specific medical imaging data and powered by advanced deep learning architectures including ResNet50 and EfficientNet, running on high-performance NVIDIA GPUs for fast and reliable results.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            How accurate are your AI diagnostic models?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExamples">
+                                        <div class="accordion-body">
+                                            <p class="disc">
+                                                Our models achieve exceptional accuracy rates: Pneumonia detection reaches 99.9% accuracy using ResNet50 on chest MR images, and brain tumor detection also achieves 99.9% accuracy with EfficientNet-B1 architecture.
+                                            </p>
+                                            <p class="disc">
+                                                For skin cancer classification, we achieve 85% accuracy in distinguishing between benign and malignant lesions, while our diabetic retinopathy model reaches 86% accuracy in severity classification. These high accuracy rates make our models suitable for clinical decision support systems.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            What types of medical images do your models analyze?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExamples">
+                                        <div class="accordion-body">
+                                            <p class="disc">
+                                                Our AI models are trained to analyze various types of medical imaging data. We process chest MR (Magnetic Resonance) images for pneumonia detection, microscopic skin images for cancer classification, brain MR images for tumor detection, and eye fundus photographs for diabetic retinopathy assessment.
+                                            </p>
+                                            <p class="disc">
+                                                Each model is specifically optimized for its respective imaging modality, ensuring the highest possible accuracy and reliability. Our system can handle standard medical imaging formats and provides rapid analysis results for clinical workflows.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            How fast do your AI models provide diagnostic results?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExamples">
+                                        <div class="accordion-body">
+                                            <p class="disc">
+                                                Our AI models are designed for rapid analysis and can provide diagnostic results within seconds to minutes, depending on the complexity of the case and image quality. The models run on high-performance NVIDIA GPUs including RTX 4000 Ada, RTX 6000 Ada, and T4 GPU for optimal processing speed.
+                                            </p>
+                                            <p class="disc">
+                                                This fast turnaround time makes our platform ideal for clinical settings where quick decision-making is crucial. Healthcare professionals can receive immediate insights to support their diagnostic process and patient care decisions.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Can healthcare professionals integrate your AI models into their existing systems?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExamples">
+                                        <div class="accordion-body">
+                                            <p class="disc">
+                                                Yes, our AI models are designed to be easily integrated into existing healthcare information systems and clinical workflows. We provide APIs and technical documentation to facilitate seamless integration with hospital management systems, PACS (Picture Archiving and Communication Systems), and other medical software platforms.
+                                            </p>
+                                            <p class="disc">
+                                                Our technical team provides comprehensive support during the integration process, ensuring that the AI diagnostic tools work harmoniously with your current infrastructure while maintaining data security and compliance with healthcare regulations.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSix">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                            Are your AI diagnostic models approved for clinical use?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExamples">
+                                        <div class="accordion-body">
+                                            <p class="disc">
+                                                Our AI models are designed as clinical decision support tools to assist healthcare professionals in their diagnostic process. While our models achieve high accuracy rates, they are intended to complement, not replace, professional medical judgment and should always be used in conjunction with clinical expertise.
+                                            </p>
+                                            <p class="disc">
+                                                We continuously work towards regulatory compliance and are committed to meeting the highest standards for medical AI applications. Healthcare professionals should always validate AI-generated insights with their clinical knowledge and follow established medical protocols for patient care.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- rts faq section area end -->
+        <div class="shape-area">
+            <img src="/static/images/faq/shape/01.png" alt="" class="one">
+            <img src="/static/images/faq/shape/02.png" alt="" class="two">
+            <img src="/static/images/faq/shape/03.png" alt="" class="three">
+            <img src="/static/images/faq/shape/04.png" alt="" class="four">
+        </div>
+    </div>
+    <!-- faq call to action area end -->
+
+
+
+    <!-- subscription area start -->
+     {% include  './partials/subscription2.html' %}
+    <!-- subscription area end -->
+    
+    <div class="rts-footer-area footer-four rts-section-gap">
+        <div class="container mb--65">
+            <div class="row g-48 g-lg-0">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <!-- single footer four wized -->
+                    <div class="single-footer-four-wized">
+                        <h5 class="title">Company</h5>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">We hire</a></li>
+                            <li><a href="#">AI Research</a></li>
+                        </ul>
+                    </div>
+                    <!-- single footer four wized end -->
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <!-- single footer four wized -->
+                    <div class="single-footer-four-wized">
+                        <h5 class="title">AI Solutions</h5>
+                        <ul>
+                            <li><a href="#">Content Generation</a></li>
+                            <li><a href="#">Data Analytics</a></li>
+                            <li><a href="#">AI Automation</a></li>
+                            <li><a href="#">Machine Learning</a></li>
+                        </ul>
+                    </div>
+                    <!-- single footer four wized end -->
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <!-- single footer four wized -->
+                    <div class="single-footer-four-wized">
+                        <h5 class="title">AI Tools</h5>
+                        <ul>
+                            <li><a href="#">AI Assistant</a></li>
+                            <li><a href="#">Text Generator</a></li>
+                            <li><a href="#">Data Processor</a></li>
+                            <li><a href="#">AI Models</a></li>
+                        </ul>
+                    </div>
+                    <!-- single footer four wized end -->
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <!-- single footer four wized -->
+                    <div class="single-footer-four-wized">
+                        <h5 class="title">Legal</h5>
+                        <ul>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">AI Ethics</a></li>
+                            <li><a href="#">Data Usage</a></li>
+                        </ul>
+                    </div>
+                    <!-- single footer four wized end -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <!-- footer input wrapper inbner-main area -->
+                    <div class="footer-input-main-wrapper-one">
+                        <div class="single-footer-wized-one">
+                            <h6 class="title">Wait List</h6>
+                            <form action="/newsletter-subscribe" method="post" id="newsletter-form">
+                                <input type="email" name="email" placeholder="Email address.." required>
+                                <i class="fa-regular fa-envelope"></i>
+                                <button type="submit" class="rts-btn btn-primary">Join</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- footer input wrapper inbner-main area end -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-area-four pt--65 mt-65 border-top">
+                        <a href="#" class="logo">
+                            <img class="light" src="/static/images/logo/logo-1.png" alt="logo">
+                            <img class="dark" src="/static/images/logo/logo-one-dark.png" alt="logo">
+                        </a>
+                        <p>© 2025 Mediain, All right reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

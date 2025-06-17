@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include  './partials/head.html' %}
+
+<body>
+
+    <!-- header area start -->
+    <header class="header-style-one header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-style-one-wrapper">
+                        <div class="logo-area">
+                            <a href="{{ url_for('index') }}" class="logo">
+                                <img class="light" src="/static/images/logo/logo-1.png" alt="logo">
+                            </a>
+                        </div>
+                        <nav class="main-nav-area">
+                            <ul class="list-unstyled fluxi-desktop-menu">
+                                <li class="menu-item">
+                                    <a href="{{ url_for('index') }}" class="main-element fluxi-dropdown-main-element">Home</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ url_for('free') }}" class="main-element fluxi-dropdown-main-element">API</a>
+                                </li>
+
+
+
+                                <li class="menu-item"><a class="main-element fluxi-dropdown-main-element" href="{{ url_for('contact') }}">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="button-area-start">
+                            <span class="call-us">Based on Turkey</span>
+                            <a href="{{ url_for('free') }}" class="rts-btn btn-primary">Analyze</a>
+                            <div class="menu-btn" id="menu-btn">
+    
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect width="20" height="2" fill="#1F1F25"></rect>
+                                </svg>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+    <!-- single sertvice area start -->
+    <div class="single-service-banner-area rts-section-gapTop">
+        <div class="container">
+            <div class="row pt--100 pb--80 align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="banner-area-left-service-single">
+                        <h1 class="title split-collab">Paid search <br>
+                            <span>management</span> <br>
+                            marketing
+                        </h1>
+                        <p class="disc">
+                            Struggling to find PPC experts who really understand your business our world-class marketers would love to help.
+                        </p>
+                        <a href="#" class="rts-btn btn-primary arrow-rotate">Analyze <i class="fa-light fa-arrow-right"></i></a>
+                        <p class="mt--30 mb--0">No credit card required.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="thumbnail">
+                        <img src="/static/images/service/06.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-area">
+            <img src="/static/images/service/shape/02.png" alt="shape" class="one">
+            <img src="/static/images/service/shape/03.png" alt="shape" class="two">
+            <img src="/static/images/service/shape/04.png" alt="shape" class="three">
+            <img src="/static/images/service/shape/05.png" alt="shape" class="four">
+        </div>
+    </div>
+    <!-- single sertvice area end -->
+
+    <!-- rts counter up area start -->
+    <div class="rts-counterup-area rts-section-gapBottom">
+        <div class="container">
+            <div class="row pb--80">
+                <div class="col-lg-12">
+                    <div class="counter-upmain-wrapper-style-one service-single">
+                        <!-- single counter up area start -->
+                        <div class="single-counter-up">
+                            <h3 class="title"><span class="counter">2.5</span>B</h3>
+                            <p>Related keywords</p>
+                        </div>
+                        <!-- single counter up area end -->
+                        <!-- single counter up area start -->
+                        <div class="single-counter-up">
+                            <h3 class="title"><span class="counter">100</span>M</h3>
+                            <p>Competitors keywords</p>
+                        </div>
+                        <!-- single counter up area end -->
+                        <!-- single counter up area start -->
+                        <div class="single-counter-up">
+                            <h3 class="title"><span class="counter">48</span>k</h3>
+                            <p>Supported locations</p>
+                        </div>
+                        <!-- single counter up area end -->
+                        <!-- single counter up area start -->
+                        <div class="single-counter-up">
+                            <h3 class="title"><span class="counter">2004</span></h3>
+                            <p>Year founded</p>
+                        </div>
+                        <!-- single counter up area end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts counter up area end -->
+
+    <!-- rts service area start -->
+    <div class="rts-product-area">
+        <div class="container">
+            <div class="row service-relative align-items-center section-separator-top-bg-white single-product-list pt--125 pb--125 pb_md--80 pb_sm--30 pt_md--80 pt_sm--50">
+                <div class="col-lg-6 col-md-6">
+                    <div class="large-thumbnail">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/product/29.jpg" alt="product">
+                        </a>
+                        <div class="small-image">
+                            <img class="sm-right" src="/static/images/product/32.png" alt="product">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 offset-lg-1">
+                    <div class="portfolio-content-wrapper-list">
+                        <h2 class="title split-collab">Combining search <br>
+                            engine marketing</h2>
+                        <p class="disc">
+                            For over four decades, Tenet Partners has applied our proven methodology to deliver compelling corporate brands for hundreds of organizations.
+                        </p>
+                    </div>
+                </div>
+                <div class="service--shape">
+                    <img src="/static/images/service/shape/04.png" alt="service" class="one">
+                    <img src="/static/images/service/shape/06.png" alt="service" class="two">
+                </div>
+            </div>
+            <div class="row service-relative align-items-center section-separator-top-bg-white single-product-list pt--125 pb--125 pb_md--80 pb_sm--30 pt_md--80 pt_sm--50">
+                <div class="col-lg-5 col-md-6">
+                    <div class="portfolio-content-wrapper-list">
+                        <h2 class="title split-collab">Conversion rate <br> optimization (CRO)</h2>
+                        <p class="disc">
+                            For over four decades, Tenet Partners has applied our proven methodology to deliver compelling corporate brands for hundreds of organizations.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6  offset-lg-1">
+                    <div class="large-thumbnail d-flex justify-content-end">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/product/30.jpg" alt="product">
+                        </a>
+                        <div class="small-image">
+                            <img class="sm-right left" src="/static/images/product/33.png" alt="product">
+                        </div>
+                    </div>
+                </div>
+                <div class="service--shape">
+                    <img src="/static/images/service/shape/04.png" alt="service" class="three">
+                    <img src="/static/images/service/shape/06.png" alt="service" class="four">
+                </div>
+            </div>
+            <div class="row service-relative align-items-center section-separator-top-bg-white single-product-list pt--125 pb--125 pb_md--80 pb_sm--30 pt_md--80 pt_sm--50">
+                <div class="col-lg-6 col-md-6">
+                    <div class="large-thumbnail">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/product/31.jpg" alt="product">
+                        </a>
+                        <div class="small-image">
+                            <img class="sm-right" src="/static/images/product/34.png" alt="product">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 offset-lg-1">
+                    <div class="portfolio-content-wrapper-list">
+                        <h2 class="title split-collab">Real certified Google <br>
+                            Ads professionals</h2>
+                        <p class="disc">
+                            For over four decades, Tenet Partners has applied our proven methodology to deliver compelling corporate brands for hundreds of organizations.
+                        </p>
+                    </div>
+                </div>
+                <div class="service--shape">
+                    <img src="/static/images/service/shape/04.png" alt="service" class="five">
+                    <img src="/static/images/service/shape/06.png" alt="service" class="six">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts service area end -->
+
+    <!-- working process are start -->
+    <div class="rts-working-porcess-area-two ptb--160 bg-dark-border-radious-sd">
+        <div class="container-1058">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-one-center">
+                        <span class="pre skew-up">Our process</span>
+                        <h2 class="title skew-up">How we work to help <br>
+                            your business grow</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-48 mt--0">
+                <div class="col-lg-6 col-md-6">
+                    <div class="working-process-right-area-one">
+                        <div class="thumbnail">
+                            <img class="large" src="/static/images/working-process/02.png" alt="working-process">
+                            <img src="/static/images/working-process/01.png" alt="" class="small">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="working-process-accordion-one">
+                        <div class="accordion" id="accordionExamples">
+                            <div class="accordion-item show">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        01. Creating a strategy
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExamples">
+                                    <div class="accordion-body">
+                                        Includes using high-quality keywords to write strategic content that ranks, as well as descriptive metadata and meaningful image alt text.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        02. Building your site
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExamples">
+                                    <div class="accordion-body">
+                                        Includes using high-quality keywords to write strategic content that ranks, as well as descriptive metadata and meaningful image alt text.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        03. Website optimization
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExamples">
+                                    <div class="accordion-body">
+                                        Includes using high-quality keywords to write strategic content that ranks, as well as descriptive metadata and meaningful image alt text.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        04. Website Seo
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExamples">
+                                    <div class="accordion-body">
+                                        Includes using high-quality keywords to write strategic content that ranks, as well as descriptive metadata and meaningful image alt text.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- working process are end -->
+
+    {% include  './partials/blog.html' %}
+
+    <!-- subscription area start -->
+    {% include  './partials/subscription.html' %}
+    <!-- subscription area end -->
+
+    <!-- footer area start -->
+    <div class="rts-footer-area footer-four rts-section-gap">
+        <div class="container mb--65">
+            <div class="row g-48">
+                <div class="row g-48">
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="single-footer-wized-one">
+                            <h6 class="title">Solutions</h6>
+                            <ul>
+                                <li><a href="#">Content Marketing</a></li>
+                                <li><a href="#">Consumer Insights</a></li>
+                                <li><a href="#">SEO Content Strategy</a></li>
+                                <li><a href="#">Keyword Research</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="single-footer-wized-one">
+                            <h6 class="title">Resources</h6>
+                            <ul>
+                                <li><a href="#">Insights</a></li>
+                                <li><a href="#">Keyword Generator</a></li>
+                                <li><a href="#">Research Tool</a></li>
+                                <li><a href="#">News & Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="single-footer-wized-one">
+                            <h6 class="title">Company</h6>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="single-footer-wized-one">
+                            <h6 class="title">Other links</h6>
+                            <ul>
+                                <li><a href="#">Content Marketing</a></li>
+                                <li><a href="#">Consumer Insights</a></li>
+                                <li><a href="#">SEO Content Strategy</a></li>
+                                <li><a href="#">Keyword Research</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <!-- footer input wrapper inbner-main area -->
+                        <div class="footer-input-main-wrapper-one">
+                            <div class="single-footer-wized-one">
+                                <h6 class="title">Newsletter</h6>
+                                <form action="#">
+                                    <input type="email" placeholder="Email address.." required>
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <button class="rts-btn btn-primary">Subscribe now</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- footer input wrapper inbner-main area end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-area-four pt--65 mt-65 border-top">
+                        <a href="#" class="logo">
+                            <img class="light" src="/static/images/logo/logo-1.png" alt="logo"> 
+                        </a>
+                        <p>© 2025 Mediain, All right reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer area end -->
+
+    <div id="anywhere-home" class=""></div>
+
+    <!-- side bar area  -->
+    {% include  './partials/sideBar2.html' %}
+    <!-- side abr area end -->
+
+    <!-- progress area start -->
+    {% include  './partials/progress.html' %}
+    <!-- progress area end -->
+
+    <!-- jquery js -->
+    <script src="/static/js/plugins/jquery.min.js"></script>
+    <script src="/static/js/plugins/bootstrap.min.js"></script>
+    <script src="/static/js/plugins/metismenu.js"></script>
+    <script src="/static/js/vendor/jqueryui.js"></script>
+
+    <script src="/static/js/vendor/waypoint.js"></script>
+
+    <script src="/static/js/plugins/swiper.js"></script>
+    <script src="/static/js/plugins/theia-sticky-sidebar.min.js"></script>
+
+    <script src="/static/js/plugins/gsap.min.js"></script>
+    <script src="/static/js/plugins/scrolltigger.js"></script>
+
+    <script src="/static/js/vendor/split-text.js"></script>
+    <script src="/static/js/vendor/split-type.js"></script>
+
+    <script src="/static/js/vendor/waw.js"></script>
+
+    <script src="/static/js/plugins/counter-up.js"></script>
+    <script src="/static/js/plugins/magnific-popup.js"></script>
+    <script src="/static/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Listen for the collapse show event
+            $('.working-process-accordion-one .accordion-collapse').on('show.bs.collapse', function() {
+                // Find the parent .accordion-item and add the 'show' class
+                $(this).closest('.accordion-item').addClass('show');
+            });
+
+            // Listen for the collapse hide event
+            $('.working-process-accordion-one .accordion-collapse').on('hide.bs.collapse', function() {
+                // Find the parent .accordion-item and remove the 'show' class
+                $(this).closest('.accordion-item').removeClass('show');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

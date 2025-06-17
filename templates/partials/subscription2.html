@@ -1,0 +1,145 @@
+<div class="rts-subscribe-area-one rts-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="subscribe-main-wrapper-one">
+                    <div class="title-style-one-center">
+                        <h2 class="title">Join our newspaper to <br> follow our project closely.</h2>
+                        <p class="disc">
+                            Your mail information is protected with 256 bit encryption.
+                        </p>
+                        <form action="/newsletter" method="post" id="subscription-form" style="position: relative; display: inline-flex; align-items: center;">
+                            <div style="position: relative; display: inline-block;">
+                                <i class="fa-regular fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #999; pointer-events: none; z-index: 2;"></i>
+                                <input type="email" name="email" placeholder="enter your e-mail" required style="padding-left: 45px;">
+                            </div>
+                            <button type="submit" class="rts-btn btn-primary">Join</button>
+                        </form>
+                    </div>
+                    <div class="shape-area">
+                        <img class="one" src="/static/images/subscribtion/shape/01.png" alt="subscribtion">
+                        <img class="two" src="/static/images/subscribtion/shape/02.png" alt="subscribtion">
+                        <img class="three" src="/static/images/subscribtion/shape/03.png" alt="subscribtion">
+                        <img class="four" src="/static/images/subscribtion/shape/04.png" alt="subscribtion">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal for Subscription -->
+<div id="success-modal-subscription" class="success-modal-overlay" style="display: none;">
+    <div class="success-modal" style="position: relative;">
+        
+        <!-- Close button - positioned absolutely in top right -->
+        <div style="position: absolute; top: -15px; right: -15px; z-index: 10000;">
+            <button class="close-modal" id="close-success-modal-subscription" style="background: white; border: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Modal content -->
+        <div class="success-modal-header" style="text-align: center; margin-bottom: 20px;">
+            <div class="success-icon">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="30" r="30" fill="#22C55E"/>
+                    <path d="M18 30L26 38L42 22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+        <div class="success-modal-body" style="text-align: center;">
+            <h3>Thanks for contact!</h3>
+            <p>Your message has been sent successfully. We'll get back to you soon!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Subscription Form Handler Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Handle Subscription Form
+    const subscriptionForm = document.getElementById('subscription-form');
+    if (subscriptionForm) {
+        subscriptionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Clear form
+                const emailInput = document.querySelector('#subscription-form input[name="email"]');
+                if (emailInput) emailInput.value = '';
+                showSubscriptionModal();
+            })
+            .catch(error => {
+                console.log('Error:', error);
+                showSubscriptionModal(); // Show success even on fail
+            });
+        });
+    }
+    
+    // Subscription Modal functions
+    function showSubscriptionModal() {
+        const modal = document.getElementById('success-modal-subscription');
+        
+        if (!modal) {
+            return;
+        }
+        
+        modal.style.display = 'flex';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        modal.style.zIndex = '9999';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.classList.add('show');
+        
+        // Auto close after 5 seconds
+        setTimeout(function() {
+            hideSubscriptionModal();
+        }, 5000);
+    }
+    
+    function hideSubscriptionModal() {
+        const modal = document.getElementById('success-modal-subscription');
+        if (modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('show');
+        }
+    }
+    
+    // Close modal handlers for subscription
+    document.addEventListener('click', function(e) {
+        if (e.target.id === 'close-success-modal-subscription') {
+            hideSubscriptionModal();
+        }
+        
+        if (e.target.classList.contains('success-modal-overlay')) {
+            hideSubscriptionModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('success-modal-subscription');
+            if (modal && modal.classList.contains('show')) {
+                hideSubscriptionModal();
+            }
+        }
+    });
+});
+</script>

@@ -1,0 +1,942 @@
+{% extends './layout/layout.html' %}
+
+{% block content %}
+
+    <!-- predict banner area start -->
+    <div class="contact-banner-area-start rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- banner main inner contact areas start -->
+                    <div class="banner-inner-area-contact-inner">
+                        <h1 class="title skew-up-2">Mediain AI <br><span>BETA</span></h1>
+                        <p class="disc">Choose a image.png Mediain AI model and upload your image for instant analysis and diagnosis.</p>
+                        
+                        <!-- brand area start -->
+                        <div class="brand-area-main-wrapper-two" style="display: flex; justify-content: center; align-items: center; width: 100%; margin: 40px auto 0 auto; padding: 20px 0;">
+                            <div class="light brand-static-wrapper" style="width: 100%; max-width: 800px; margin: 0 auto;">
+                                <div class="brand-static-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 600px; margin: 0 auto;">
+                                    <div class="brand-item" style="flex: 0 0 auto; margin: 0 20px;">
+                                        <a href="https://www.nvidia.com/tr-tr/" target="_blank"><img src="/static/images/brand/brand1.png" alt="NVIDIA" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                    </div>
+                                    <div class="brand-item" style="flex: 0 0 auto; margin: 0 20px;">
+                                        <a href="https://www.intel.com/content/www/us/en/homepage.html" target="_blank"><img src="/static/images/brand/brand2.png" alt="Intel" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                    </div>
+                                    <div class="brand-item" style="flex: 0 0 auto; margin: 0 20px;">
+                                        <a href="https://efecreative.com" target="_blank"><img src="/static/images/brand/brand3.png" alt="EfeCreative" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- brand area end -->
+                    </div>
+                    <!-- banner main inner contact areas end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- predict banner area end -->
+
+    <!-- Model Selection Section -->
+    <div class="rts-contact-form-area contact-form-page rts-section-gapBottom" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-area-left-style text-center">
+                        <div class="pre-title">
+                            <span>AI Models</span>
+                        </div>
+                        <h2 class="title">Select AI Model</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-30 mt--30">
+                <!-- Pneumonia Detection Model -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="model-service-card" data-model="pneumonia">
+                        <input type="radio" id="pneumonia" name="selected_model" value="pneumonia" style="display: none;">
+                        <label for="pneumonia" class="model-service-label">
+                            <div class="icon">
+                                <i class="fa-solid fa-lungs"></i>
+                            </div>
+                            <h5 class="title">Pneumonia Detection</h5>
+                            <p class="disc">Detects pneumonia in chest X-ray images using advanced deep learning.</p>
+                        </label>
+                    </div>
+                </div>
+                <!-- Skin Cancer Classification Model -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="model-service-card" data-model="skin-cancer">
+                        <input type="radio" id="skin-cancer" name="selected_model" value="skin-cancer" style="display: none;">
+                        <label for="skin-cancer" class="model-service-label">
+                            <div class="icon">
+                                <i class="fa-solid fa-hand"></i>
+                            </div>
+                            <h5 class="title">Skin Cancer Classification</h5>
+                            <p class="disc">Classifies skin lesions to detect potential malignant conditions early.</p>
+                        </label>
+                    </div>
+                </div>
+                <!-- Brain Tumor Detection Model -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="model-service-card" data-model="brain-tumor">
+                        <input type="radio" id="brain-tumor" name="selected_model" value="brain-tumor" style="display: none;">
+                        <label for="brain-tumor" class="model-service-label">
+                            <div class="icon">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <h5 class="title">Brain Tumor Detection</h5>
+                            <p class="disc">Identifies brain tumors in MRI scans with high accuracy and precision.</p>
+                        </label>
+                    </div>
+                </div>
+                <!-- Diabetic Retinopathy Classification Model -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="model-service-card" data-model="diabetic-retinopathy">
+                        <input type="radio" id="diabetic-retinopathy" name="selected_model" value="diabetic-retinopathy" style="display: none;">
+                        <label for="diabetic-retinopathy" class="model-service-label">
+                            <div class="icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h5 class="title">Diabetic Retinopathy</h5>
+                            <p class="disc">Classifies diabetic retinopathy stages in retinal fundus photographs.</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Form Section -->
+    <div class="rts-contact-form-area contact-form-page rts-section-gapBottom" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <form class="contact-form" id="prediction-form" enctype="multipart/form-data">
+                        <!-- Image Upload Area -->
+                        <div class="single-input-area">
+                            <label for="image-upload">Upload Medical Image</label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="image-upload" name="medical_image" accept="image/*" style="display: none;" required>
+                                <div class="upload-area" id="upload-area">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    <span>Click to upload or drag and drop</span>
+                                    <small>PNG, JPG, JPEG up to 10MB</small>
+                                </div>
+                                <div class="image-preview" id="image-preview" style="display: none;">
+                                    <img id="preview-img" src="" alt="Preview">
+                                    <button type="button" id="remove-image" class="remove-btn">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Warning Message -->
+                        <div id="warning-message" style="display: none; color: #ef4444; font-weight: 500; margin-bottom: 15px; padding: 10px; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 8px; text-align: center;"></div>
+                        <!-- Analysis Button -->
+                        <button type="submit" class="rts-btn btn-primary" id="analyze-btn" disabled>
+                            Analyze Image <i class="fa-solid fa-microscope"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section" id="results-section" style="display: none;">
+        <div class="rts-contact-form-area rts-section-gapBottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-area-left-style text-center">
+                            <h2 class="title">Analysis Results</h2>
+                        </div>
+                        <div class="results-wrapper" id="results-content">
+                            <!-- Results will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loading-modal" class="success-modal-overlay" style="display: none;">
+        <div class="success-modal">
+            <div class="loading-spinner"></div>
+            <h3>Analyzing Image...</h3>
+            <p>Please wait while our AI processes your medical image.</p>
+        </div>
+    </div>
+
+    <style>
+                 /* Model Service Card Styles - Tema uyumlu */
+         .model-service-card {
+             background: var(--color-white);
+             border: 1px solid rgba(31, 31, 37, 0.1);
+             border-radius: 20px;
+             padding: 40px 30px;
+             text-align: center;
+             transition: all 0.4s ease;
+             cursor: pointer;
+             position: relative;
+             overflow: hidden;
+             margin-bottom: 20px;
+             pointer-events: auto;
+             z-index: 1;
+         }
+
+        .model-service-card:hover {
+            box-shadow: 0 20px 40px rgba(31, 31, 37, 0.1);
+            transform: translateY(-10px);
+            border-color: var(--color-primary);
+        }
+
+        .model-service-card.selected {
+            border-color: var(--color-primary);
+            background: linear-gradient(135deg, rgba(31, 81, 255, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+        }
+
+        .model-service-label {
+            cursor: pointer;
+            display: block;
+            margin: 0;
+            pointer-events: auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        .model-service-card .icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(31, 81, 255, 0.1) 0%, rgba(31, 81, 255, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+
+        .model-service-card .icon i {
+            font-size: 36px;
+            color: var(--color-primary);
+            transition: all 0.4s ease;
+        }
+
+        .model-service-card:hover .icon {
+            background: var(--color-primary);
+            transform: scale(1.1);
+        }
+
+        .model-service-card:hover .icon i {
+            color: var(--color-white);
+        }
+
+        .model-service-card .title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--color-heading);
+            line-height: 1.3;
+        }
+
+        .model-service-card .disc {
+            color: var(--color-text);
+            margin-bottom: 0;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* File Upload Styles - Tema uyumlu */
+        .file-upload-wrapper {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .upload-area {
+            border: 2px dashed rgba(31, 31, 37, 0.2);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background: rgba(31, 81, 255, 0.02);
+            max-width: 100%;
+            min-height: 220px;
+            margin: 0 auto;
+        }
+
+        .upload-area:hover,
+        .upload-area.dragover {
+            border-color: var(--color-primary);
+            background: rgba(31, 81, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .upload-area i {
+            font-size: 48px;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .upload-area:hover i {
+            transform: scale(1.1);
+        }
+
+        .upload-area span {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-heading);
+            margin-bottom: 8px;
+        }
+
+        .upload-area small {
+            color: var(--color-text);
+            font-size: 14px;
+        }
+
+        .image-preview {
+            border: 2px solid rgba(31, 31, 37, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            background: var(--color-white);
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(31, 31, 37, 0.1);
+        }
+
+                 .remove-btn {
+             position: absolute;
+             top: 15px;
+             right: 15px;
+             background: #ef4444;
+             color: white;
+             border: none;
+             border-radius: 50%;
+             width: 40px;
+             height: 40px;
+             cursor: pointer;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+             transition: all 0.3s ease;
+             text-decoration: none;
+             outline: none;
+         }
+
+         .remove-btn:hover {
+             transform: scale(1.1);
+             background: #dc2626;
+             text-decoration: none;
+         }
+
+         .remove-btn:focus {
+             outline: none;
+             text-decoration: none;
+         }
+
+         .remove-btn i {
+             text-decoration: none;
+         }
+
+        /* Results Styles - Tema uyumlu */
+        .results-wrapper {
+            margin-top: 0;
+        }
+
+        .results-section {
+            min-height: 400px;
+        }
+
+        /* Sponsor logos hover effects */
+        .logo-item:hover {
+            background: rgba(255,255,255,0.2) !important;
+            transform: translateY(-5px);
+        }
+
+
+
+        .result-card {
+            background: var(--color-white);
+            border: 1px solid rgba(31, 31, 37, 0.1);
+            border-radius: 20px;
+            padding: 30px 25px;
+            box-shadow: 0 10px 30px rgba(31, 31, 37, 0.1);
+            margin-bottom: 0;
+            height: 100%;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .result-card h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-heading);
+            margin-bottom: 25px;
+        }
+
+        .confidence-bar {
+            margin-bottom: 25px;
+        }
+
+        .confidence-label {
+            font-weight: 600;
+            color: var(--color-heading);
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .confidence-progress {
+            background: rgba(31, 31, 37, 0.1);
+            border-radius: 25px;
+            height: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 25px;
+            transition: width 0.8s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 100%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .result-card p {
+            color: var(--color-text);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .result-card strong {
+            color: var(--color-heading);
+        }
+
+        /* Loading Spinner - Tema uyumlu */
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(31, 31, 37, 0.1);
+            border-top: 6px solid var(--color-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+         /* Responsive Design */
+         @media (max-width: 991px) {
+             .model-service-card {
+                 margin-bottom: 30px;
+             }
+         }
+         
+         @media (max-width: 768px) {
+             .model-service-card {
+                 padding: 30px 20px;
+                 margin-bottom: 30px;
+             }
+             
+             .model-service-card .icon {
+                 width: 60px;
+                 height: 60px;
+                 margin-bottom: 20px;
+             }
+             
+             .model-service-card .icon i {
+                 font-size: 28px;
+             }
+             
+             .model-service-card .title {
+                 font-size: 18px;
+             }
+             
+             .upload-area {
+                 padding: 40px 20px;
+             }
+             
+             .upload-area i {
+                 font-size: 36px;
+             }
+             
+             .result-card {
+                 padding: 30px 20px;
+             }
+             
+             .result-card h4 {
+                 font-size: 20px;
+             }
+
+             /* Mobile responsive for results */
+             .uploaded-image-display {
+                 margin-bottom: 30px;
+             }
+         }
+
+         @media (max-width: 576px) {
+             .model-service-card {
+                 padding: 25px 15px;
+                 margin-bottom: 25px;
+             }
+             
+             .upload-area {
+                 padding: 30px 15px;
+             }
+             
+             .result-card {
+                 padding: 25px 15px;
+             }
+         }
+
+        .image-preview .remove-btn {
+            position: absolute !important;
+            left: 8px !important;
+            top: 8px !important;
+            right: auto !important;
+            width: 28px !important;
+            height: 28px !important;
+            min-width: 0 !important;
+            min-height: 0 !important;
+            max-width: 40px !important;
+            max-height: 40px !important;
+            padding: 0 !important;
+            background: #ef4444 !important;
+            border-radius: 50% !important;
+            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.2) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 2 !important;
+            overflow: hidden !important;
+            border: none !important;
+        }
+        .image-preview .remove-btn i {
+            color: #fff !important;
+            font-size: 16px !important;
+            line-height: 1 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: static !important;
+        }
+
+        .prediction-time {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(31, 81, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        [data-theme=dark] .prediction-time {
+            background: rgba(31, 81, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .result-card {
+            position: relative;
+            padding-top: 50px;
+        }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modelCards = document.querySelectorAll('.model-service-card');
+        const uploadArea = document.getElementById('upload-area');
+        const imageUpload = document.getElementById('image-upload');
+        const imagePreview = document.getElementById('image-preview');
+        const previewImg = document.getElementById('preview-img');
+        const removeImageBtn = document.getElementById('remove-image');
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const form = document.getElementById('prediction-form');
+        const loadingModal = document.getElementById('loading-modal');
+        const resultsSection = document.getElementById('results-section');
+
+        // Model selection
+        modelCards.forEach(card => {
+            card.addEventListener('click', function() {
+                modelCards.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) {
+                    radio.checked = true;
+                }
+                checkFormReady();
+            });
+        });
+        
+        // Direct radio button listeners
+        const radioButtons = document.querySelectorAll('input[name="selected_model"]');
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Update visual selection
+                modelCards.forEach(c => c.classList.remove('selected'));
+                const selectedCard = document.querySelector(`[data-model="${this.value}"]`);
+                if (selectedCard) {
+                    selectedCard.classList.add('selected');
+                }
+                checkFormReady();
+            });
+        });
+
+        // File upload handling
+        uploadArea.addEventListener('click', () => imageUpload.click());
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFileSelect(files[0]);
+            }
+        });
+
+        imageUpload.addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                handleFileSelect(e.target.files[0]);
+            }
+        });
+
+        removeImageBtn.addEventListener('click', function() {
+            imageUpload.value = '';
+            uploadArea.style.display = 'block';
+            imagePreview.style.display = 'none';
+            checkFormReady();
+            
+            // Hide results section
+            resultsSection.style.display = 'none';
+        });
+
+        function handleFileSelect(file) {
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    uploadArea.style.display = 'none';
+                    imagePreview.style.display = 'block';
+                    checkFormReady();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function checkFormReady() {
+            const modelSelected = document.querySelector('input[name="selected_model"]:checked');
+            const imageSelected = imageUpload.files.length > 0;
+            const warningMessage = document.getElementById('warning-message');
+            
+            analyzeBtn.disabled = !(modelSelected && imageSelected);
+            
+            // Show appropriate warning message
+            if (!modelSelected && !imageSelected) {
+                warningMessage.innerHTML = 'Please select an AI model and upload a medical image.';
+                warningMessage.style.display = 'block';
+            } else if (!modelSelected) {
+                warningMessage.innerHTML = 'Please select an AI model.';
+                warningMessage.style.display = 'block';
+            } else if (!imageSelected) {
+                warningMessage.innerHTML = 'Please upload a medical image.';
+                warningMessage.style.display = 'block';
+            } else {
+                warningMessage.style.display = 'none';
+            }
+        }
+
+
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const selectedModel = document.querySelector('input[name="selected_model"]:checked');
+            const imageFile = imageUpload.files[0];
+            
+            // Check if model is selected
+            if (!selectedModel) {
+                return;
+            }
+            
+            // Check if image is uploaded
+            if (!imageFile) {
+                return;
+            }
+            
+            // Show loading modal
+            loadingModal.style.display = 'flex';
+            
+            // Create FormData object
+            const formData = new FormData();
+            formData.append('medical_image', imageFile);
+            formData.append('selected_model', selectedModel.value);
+            
+            // Make API call to backend
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                loadingModal.style.display = 'none';
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                showResults(selectedModel.value, data, imageFile);
+            })
+            .catch(error => {
+                loadingModal.style.display = 'none';
+                alert('Error: ' + error.message);
+            });
+        });
+
+        function showResults(model, data, imageFile) {
+            const resultsContent = document.getElementById('results-content');
+            let results = '';
+            
+            // Tahmin süresini göster
+            const predictionTime = data.prediction_time ? 
+                `<div class="prediction-time">Prediction Time: ${data.prediction_time} seconds</div>` : '';
+            
+            switch(model) {
+                case 'pneumonia':
+                    const pneumoniaProb = (data.probability * 100).toFixed(1);
+                    
+                    // Risk level determination
+                    let pneumoniaRisk = '';
+                    let pneumoniaColor = '';
+                    if (pneumoniaProb < 30) {
+                        pneumoniaRisk = 'Low Risk';
+                        pneumoniaColor = 'linear-gradient(90deg, #10b981 0%, #059669 100%)';
+                    } else if (pneumoniaProb < 50) {
+                        pneumoniaRisk = 'Moderate Risk';
+                        pneumoniaColor = 'linear-gradient(90deg, #f59e0b 0%, #d97706 100%)';
+                    } else if (pneumoniaProb < 70) {
+                        pneumoniaRisk = 'High Risk';
+                        pneumoniaColor = 'linear-gradient(90deg, #ef4444 0%, #dc2626 100%)';
+                    } else {
+                        pneumoniaRisk = 'Very High Risk';
+                        pneumoniaColor = 'linear-gradient(90deg, #dc2626 0%, #991b1b 100%)';
+                    }
+                    
+                    results = `
+                        <div class="result-card">
+                            <h4>Pneumonia Detection Result</h4>
+                            ${predictionTime}
+                            <div class="confidence-bar">
+                                <div class="confidence-label">Pneumonia Probability: ${pneumoniaProb}% - ${pneumoniaRisk}</div>
+                                <div class="confidence-progress">
+                                    <div class="progress-fill" style="width: ${pneumoniaProb}%; background: ${pneumoniaColor};"></div>
+                                </div>
+                            </div>
+                            <p><strong>Classification:</strong> ${data.classification}</p>
+                            <p><strong>Recommendation:</strong> ${data.classification === 'Pneumonia Detected' ? 
+                                'Pneumonia symptoms detected. Please consult with a healthcare professional immediately.' : 
+                                'No signs of pneumonia detected. Continue regular check-ups.'}</p>
+                        </div>
+                    `;
+                    break;
+                case 'skin-cancer':
+                    const skinCancerProb = (data.probability * 100).toFixed(1);
+                    
+                    // Risk level determination
+                    let skinCancerRisk = '';
+                    let skinCancerColor = '';
+                    if (skinCancerProb < 30) {
+                        skinCancerRisk = 'Low Risk';
+                        skinCancerColor = 'linear-gradient(90deg, #10b981 0%, #059669 100%)';
+                    } else if (skinCancerProb < 50) {
+                        skinCancerRisk = 'Moderate Risk';
+                        skinCancerColor = 'linear-gradient(90deg, #f59e0b 0%, #d97706 100%)';
+                    } else if (skinCancerProb < 70) {
+                        skinCancerRisk = 'High Risk';
+                        skinCancerColor = 'linear-gradient(90deg, #ef4444 0%, #dc2626 100%)';
+                    } else {
+                        skinCancerRisk = 'Very High Risk';
+                        skinCancerColor = 'linear-gradient(90deg, #dc2626 0%, #991b1b 100%)';
+                    }
+                    
+                    results = `
+                        <div class="result-card">
+                            <h4>Skin Cancer Classification Result</h4>
+                            ${predictionTime}
+                            <div class="confidence-bar">
+                                <div class="confidence-label">Malignant Probability: ${skinCancerProb}% - ${skinCancerRisk}</div>
+                                <div class="confidence-progress">
+                                    <div class="progress-fill" style="width: ${skinCancerProb}%; background: ${skinCancerColor};"></div>
+                                </div>
+                            </div>
+                            <p><strong>Classification:</strong> ${data.classification}</p>
+                            <p><strong>Recommendation:</strong> ${data.classification === 'Malignant' ? 
+                                'Malignant lesion detected. Please consult a dermatologist immediately for further evaluation.' : 
+                                'Benign lesion detected. Regular monitoring recommended.'}</p>
+                        </div>
+                    `;
+                    break;
+                case 'brain-tumor':
+                    const tumorProb = (data.probability * 100).toFixed(1);
+                    
+                    // Risk level determination
+                    let tumorRisk = '';
+                    let tumorColor = '';
+                    if (tumorProb < 30) {
+                        tumorRisk = 'Low Risk';
+                        tumorColor = 'linear-gradient(90deg, #10b981 0%, #059669 100%)';
+                    } else if (tumorProb < 50) {
+                        tumorRisk = 'Moderate Risk';
+                        tumorColor = 'linear-gradient(90deg, #f59e0b 0%, #d97706 100%)';
+                    } else if (tumorProb < 70) {
+                        tumorRisk = 'High Risk';
+                        tumorColor = 'linear-gradient(90deg, #ef4444 0%, #dc2626 100%)';
+                    } else {
+                        tumorRisk = 'Very High Risk';
+                        tumorColor = 'linear-gradient(90deg, #dc2626 0%, #991b1b 100%)';
+                    }
+                    
+                    results = `
+                        <div class="result-card">
+                            <h4>Brain Tumor Detection Result</h4>
+                            ${predictionTime}
+                            <div class="confidence-bar">
+                                <div class="confidence-label">Tumor Probability: ${tumorProb}% - ${tumorRisk}</div>
+                                <div class="confidence-progress">
+                                    <div class="progress-fill" style="width: ${tumorProb}%; background: ${tumorColor};"></div>
+                                </div>
+                            </div>
+                            <p><strong>Classification:</strong> ${data.classification}</p>
+                            <p><strong>Recommendation:</strong> ${data.classification === 'Tumor' ? 
+                                'Brain tumor detected. Immediate consultation with a neurologist or neurosurgeon is strongly recommended.' : 
+                                'No signs of brain tumor detected. Continue regular check-ups.'}</p>
+                        </div>
+                    `;
+                    break;
+                case 'diabetic-retinopathy':
+                    const drConf = (data.confidence * 100).toFixed(1);
+                    results = `
+                        <div class="result-card">
+                            <h4>Diabetic Retinopathy Classification Result</h4>
+                            ${predictionTime}
+                            <div class="confidence-bar">
+                                <div class="confidence-label">${data.classification}: ${drConf}%</div>
+                                <div class="confidence-progress">
+                                    <div class="progress-fill" style="width: ${drConf}%; background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);"></div>
+                                </div>
+                            </div>
+                            <p><strong>Stage:</strong> ${data.classification}</p>
+                            <p><strong>Recommendation:</strong> ${getDRRecommendation(data.classification)}</p>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            resultsContent.innerHTML = results;
+            resultsSection.style.display = 'block';
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function getDRRecommendation(stage) {
+            switch(stage) {
+                case 'Normal':
+                    return 'No signs of diabetic retinopathy. Continue regular eye check-ups.';
+                case 'Mild':
+                    return 'Early signs of diabetic retinopathy detected. Regular monitoring and blood sugar control recommended.';
+                case 'Moderate':
+                    return 'Moderate diabetic retinopathy detected. Regular ophthalmologic follow-up and strict blood sugar control are essential.';
+                case 'Severe':
+                    return 'Severe diabetic retinopathy detected. Immediate ophthalmologic consultation required.';
+                case 'Proliferative':
+                    return 'Advanced stage of diabetic retinopathy detected. Urgent ophthalmologic intervention required.';
+                default:
+                    return 'Please consult with an ophthalmologist for proper evaluation.';
+            }
+        }
+    });
+    </script>
+
+    <style>
+        .result-item {
+            background: #F8FAFC;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .result-item h4 {
+            margin-bottom: 15px;
+            color: #1F2937;
+        }
+
+        .confidence-bar {
+            margin-bottom: 15px;
+        }
+
+        .confidence-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .confidence-progress {
+            background: #E5E7EB;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        body.dark .result-item {
+            background: #374151;
+        }
+
+        body.dark .result-item h4 {
+            color: #F9FAFB;
+        }
+    </style>
+
+{% endblock %} 

@@ -1,0 +1,37 @@
+<div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- mobile menu area start -->
+    <div class="mobile-menu-main">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+                <li>
+                    <a href="{{ url_for('index') }}" class="main">Home</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('free') }}" class="main">API</a>
+                </li>
+                <li>
+                    <a href="#" class="main">Booking</a>
+                </li>
+                <li class="has-droupdown">
+                    <a href="#" class="main">Shop</a>
+                    <ul class="submenu mm-collapse">
+                        <li><a class="mobile-menu-link" href="#">Shop</a></li>
+                        <li><a class="mobile-menu-link" href="#">product Details</a></li>
+                        <li><a class="mobile-menu-link" href="#">Cart</a></li>
+                        <li><a class="mobile-menu-link" href="#">Checkout</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{ url_for('contact') }}" class="main">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+
+        <ul class="social-area-one pl--20 mt--100">
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <!-- mobile menu area end -->
+</div>

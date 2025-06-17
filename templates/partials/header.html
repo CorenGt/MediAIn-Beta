@@ -1,0 +1,40 @@
+    <header class="header-style-one header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-style-one-wrapper">
+                        <div class="logo-area">
+                            <a href="{{ url_for('index') }}" class="logo">
+                                <img src="/static/images/logo/logo-1.png" alt="logo">
+                            </a>
+                        </div>
+                        <nav class="main-nav-area">
+                            <ul class="list-unstyled fluxi-desktop-menu">
+                                <li class="menu-item">
+                                    <a href="{{ url_for('index') }}" class="main-element fluxi-dropdown-main-element">Home</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ url_for('free') }}" class="main-element fluxi-dropdown-main-element">API</a>
+                                </li>
+
+                                <li class="menu-item"><a class="main-element fluxi-dropdown-main-element" href="{{ url_for('contact') }}">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="button-area-start">
+                            <span class="call-us">Based on Turkey</span>
+                            <a href="{{ url_for('predict') }}" class="rts-btn btn-primary">Analyze</a>
+                            <div class="menu-btn" id="menu-btn">
+
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect width="20" height="2" fill="#1F1F25"></rect>
+                                </svg>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

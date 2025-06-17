@@ -1,0 +1,195 @@
+<div class="rts-footer-area footer-four rts-section-gap">
+    <div class="container mb--65">
+        <div class="row g-48">
+            <div class="row g-48">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">AI Solutions</h6>
+                        <ul>
+                            <li><a href="#">Content Generation</a></li>
+                            <li><a href="#">Data Analytics</a></li>
+                            <li><a href="#">AI Automation</a></li>
+                            <li><a href="#">Machine Learning</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">AI Tools</h6>
+                        <ul>
+                            <li><a href="#">AI Assistant</a></li>
+                            <li><a href="#">Text Generator</a></li>
+                            <li><a href="#">Data Processor</a></li>
+                            <li><a href="#">AI Models</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">Company</h6>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">AI Research</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">Resources</h6>
+                        <ul>
+                            <li><a href="#">AI Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Whitepapers</a></li>
+                            <li><a href="#">AI News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <!-- footer input wrapper inbner-main area -->
+                    <div class="footer-input-main-wrapper-one">
+                        <div class="single-footer-wized-one">
+                            <h6 class="title">Wait List</h6>
+                            <form action="/newsletter-subscribe" method="post" id="newsletter-form">
+                                <input type="email" name="email" placeholder="Email address.." required>
+                                <i class="fa-regular fa-envelope"></i>
+                                <button type="submit" class="rts-btn btn-primary">Join</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- footer input wrapper inbner-main area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copyright-area-four pt--65 mt-65 border-top">
+                    <a href="#" class="logo">
+                        <img class="light" src="/static/images/logo/logo-1.png" alt="logo">
+                        <img class="dark" src="/static/images/logo/logo-one-dark.png" alt="logo">
+                    </a>
+                    <p>© 2025 Mediain, All right reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Modal for Footer Newsletter -->
+    <div id="success-modal-footer" class="success-modal-overlay" style="display: none;">
+        <div class="success-modal" style="position: relative;">
+            
+            <!-- Close button - positioned absolutely in top right -->
+            <div style="position: absolute; top: -15px; right: -15px; z-index: 10000;">
+                <button class="close-modal" id="close-success-modal-footer" style="background: white; border: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Modal content -->
+            <div class="success-modal-header" style="text-align: center; margin-bottom: 20px;">
+                <div class="success-icon">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="30" fill="#22C55E"/>
+                        <path d="M18 30L26 38L42 22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="success-modal-body" style="text-align: center;">
+                <h3>Thanks for contact!</h3>
+                <p>Your message has been sent successfully. We'll get back to you soon!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Form Handler Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Handle Newsletter Form in Footer
+        const newsletterForm = document.getElementById('newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Clear form
+                    const emailInput = document.querySelector('#newsletter-form input[name="email"]');
+                    if (emailInput) emailInput.value = '';
+                    showFooterModal();
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                    showFooterModal(); // Show success even on fail
+                });
+            });
+        }
+        
+        // Footer Modal functions
+        function showFooterModal() {
+            const modal = document.getElementById('success-modal-footer');
+            
+            if (!modal) {
+                return;
+            }
+            
+            modal.style.display = 'flex';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            modal.style.zIndex = '9999';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.classList.add('show');
+            
+            // Auto close after 5 seconds
+            setTimeout(function() {
+                hideFooterModal();
+            }, 5000);
+        }
+        
+        function hideFooterModal() {
+            const modal = document.getElementById('success-modal-footer');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('show');
+            }
+        }
+        
+        // Close modal handlers for footer
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'close-success-modal-footer') {
+                hideFooterModal();
+            }
+            
+            if (e.target.classList.contains('success-modal-overlay')) {
+                hideFooterModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('success-modal-footer');
+                if (modal && modal.classList.contains('show')) {
+                    hideFooterModal();
+                }
+            }
+        });
+    });
+    </script>
+</div>

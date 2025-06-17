@@ -1,0 +1,6 @@
+| Model        | Alan               | Hastalık                  
+| ------------ | ------------------ | ------------------------- 
+| Effvb1       | Beyin              | Tümör ✅                    
+| ResNet50     | Göğüs Hastalıkları | Zatürre ✅  
+| Effvb4       | Göz Hastalıkları   | göz diyabeti ✅ 
+| Resnet50     | Dermatoloji        | Cilt Kanseri ✅

@@ -1,0 +1,760 @@
+{% extends './layout/layout.html' %}
+
+{% block content %}
+
+    <!-- rts banner two area start -->
+    <div class="main-wrapper-banner-uner-over-flew">
+        <div class="rts-banner-area-two rts-section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-area-wrapper-two">
+                            <h1 class="title skew-up-2">Mediain AI <br> Enter the waiting list for V1</h1>
+                            <p class="disc">
+                                Leave your email address below to access your free VIP account, which will be created after you exit the beta.
+                            </p>
+                            <form action="/quote" method="post" id="quote-form">
+                                <input type="email" name="email" placeholder="Email address.." required>
+                                <i class="fa-regular fa-envelope"></i>
+                                <button type="submit" class="rts-btn btn-primary-2">Join a Wait List</button>
+                            </form>
+                            <div class="bottom-text">
+                                <p class="disc">While on the waiting list, your mail addresses are protected with 256-bit encryption.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-2-shape">
+            <img class="one" src="/static/images/banner/short/2-shape/01.png" alt="one">
+            <img class="two" src="/static/images/banner/short/2-shape/02.png" alt="one">
+            <img class="three" src="/static/images/banner/short/2-shape/03.png" alt="one">
+            <img class="four" src="/static/images/banner/short/2-shape/04.png" alt="one">
+            <img class="five" src="/static/images/banner/short/2-shape/05.png" alt="one">
+        </div>
+    </div>
+    <!-- rts banner two area end -->
+
+    <!-- large-image with video option -->
+    <div class="large-image-video-area">
+        <div class="container  mt-dec-100">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="thumbnail">
+                        <figure class="pli-image">
+                            <img class="anim-image-parallax tt-lazy" src="/static/images/video/01.png" data-src="/static/images/video/01.png" alt="image">
+                        </figure> <!-- /.pli-image -->
+                        <!-- <img class="anim-image-parallax" src="/static/images/video/01.png" alt="video_area"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- large-image with video option end -->
+
+    <!-- brand area start -->
+    <div class="brand-area-start rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="brand-area-main-wrapper-two" style="display: flex; justify-content: center; align-items: center; width: 100%; margin: 0 auto;">
+                        <div class="light brand-static-wrapper" style="width: 100%; max-width: 600px; margin: 0 auto;">
+                            <div class="brand-static-container" style="display: flex; justify-content: center; align-items: center; gap: 40px; width: 100%;">
+                                <div class="brand-item">
+                                    <a href="https://www.nvidia.com/tr-tr/" target="_blank"><img src="/static/images/brand/brand1.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="https://www.intel.com/content/www/us/en/homepage.html" target="_blank"><img src="/static/images/brand/brand2.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="https://efecreative.com" target="_blank"><img src="/static/images/brand/brand3.png" alt="brand" style="max-height: 60px; max-width: 150px; object-fit: contain;"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- brand area end -->
+
+    <!-- rts servgice area start -->
+    <div class="rts-service-area-two rts-section-gap bg-dark-border-radious">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-wrapper-between align-items-center">
+                        <div class="title-style-one-left">
+                            <span class="pre split-collab">What is this?</span>
+                            <h2 class="title split-collab">Brief information <br> about Mediain.</h2>
+                        </div>
+                        <p class="disc">
+                            Mediain is a practical artificial intelligence developed in the field of medicine. It instantly provides you with the percentage of your images that are correct according to the type of disease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt--10 g-5">
+                <div class="col-lg-12">
+                    <div class="service-swiper-main-wrapper-2">
+                        <div class="swiper mySwiper-service-2 pb--120">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <!-- ingle service area start -->
+                                    <div class="single-service-style-two">
+                                        <div class="icon">
+                                            <img src="/static/images/service/icon/01.png" alt="service">
+                                        </div>
+                                        <a href="{{ url_for('predict') }}">
+                                            <h6 class="title">Data Pool</h6>
+                                        </a>
+                                        <p class="disc">
+                                            With over 450 thousand data pools, mediain puts accuracy first.
+                                        </p>
+                                        <a href="{{ url_for('predict') }}" class="btn-border-bottom">Learn more <i class="fa-sharp fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                    <!-- ingle service area end -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- ingle service area start -->
+                                    <div class="single-service-style-two">
+                                        <div class="icon">
+                                            <img src="/static/images/service/icon/02.png" alt="service">
+                                        </div>
+                                        <a href="{{ url_for('predict') }}">
+                                            <h6 class="title">User Satisfaction</h6>
+                                        </a>
+                                        <p class="disc">
+                                            Mediain users appreciate the simple interface and fast operation.
+                                        </p>
+                                        <a href="{{ url_for('predict') }}" class="btn-border-bottom">Learn more <i class="fa-sharp fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                    <!-- ingle service area end -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- ingle service area start -->
+                                    <div class="single-service-style-two">
+                                        <div class="icon">
+                                            <img src="/static/images/service/icon/03.png" alt="service">
+                                        </div>
+                                        <a href="{{ url_for('predict') }}">
+                                            <h6 class="title">Success Rate</h6>
+                                        </a>
+                                        <p class="disc">
+                                            The files Mediain analyzes are 97% accurate.
+                                        </p>
+                                        <a href="{{ url_for('predict') }}" class="btn-border-bottom">Learn more <i class="fa-sharp fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                    <!-- ingle service area end -->
+                                </div>
+                            </div>
+                            <div class="button-pagination-area">
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-area">
+            <img src="/static/images/service/shape/09.png" alt="shape" class="one">
+            <img src="/static/images/service/shape/02.png" alt="shape" class="three">
+            <img src="/static/images/service/shape/04.png" alt="shape" class="four">
+        </div>
+    </div>
+    <!-- rts servgice area End -->
+
+    <!-- working process are start -->
+    <div class="rts-working-porcess-area-two ptb--160">
+        <div class="container-1058">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-one-center">
+                        <span class="pre skew-up">BETA</span>
+                        <h2 class="title skew-up">Our 4 models that you can use <br>
+                            for free for now.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-48 mt--0">
+                <div class="col-lg-6">
+                    <div class="working-process-accordion-one">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item show">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        01. Pneumonia Detection Model
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Advanced ResNet50-based AI model that analyzes chest MR images to detect pneumonia with 99.9% accuracy. Powered by NVIDIA RTX 4000 Ada for rapid diagnostic results.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        02. Skin Cancer Classification Model
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        ResNet50-powered AI system that distinguishes between benign and malignant skin cancer lesions from microscopic images with 85% accuracy. Essential for early cancer detection.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        03. Brain Tumor Detection Model
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        EfficientNet-B1 architecture that detects and classifies brain tumors from MR images with exceptional 99.9% accuracy. Supports surgical planning and treatment decisions.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        04. Diabetic Retinopathy Classification Model
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        EfficientNet-B4 model that analyzes eye fundus images to classify diabetic retinopathy severity levels with 86% accuracy. Critical for preventing vision loss in diabetic patients.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="working-process-right-area-one">
+                        <div class="thumbnail">
+                            <img class="large" src="/static/images/working-process/02.png" alt="working-process">
+                            <img src="/static/images/working-process/01.png" alt="marketing" class="small images">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-area">
+            <img src="/static/images/working-process/shape/01.png" alt="working process" class="one">
+            <img src="/static/images/working-process/shape/02.png" alt="working process" class="two">
+            <img src="/static/images/working-process/shape/03.png" alt="working process" class="three">
+        </div>
+    </div>
+    <!-- working process are end -->
+
+    <!-- rts appoinment area start -->
+    <div class="rts-appoinment-area rts-section-gap bg-dark-border-radious-2">
+        <div class="container">
+            <div class="row align-items-center justify-content-md-center">
+                <div class="col-lg-6 col-md-10">
+                    <!-- appoinment satylke two left -->
+                    <div class="appoinment-wrapper-one-left">
+                        <h2 class="title split-collab">Work with <br>
+                            Mediain</h2>
+                        <p class="disc">Please fill out the form if you would like to cooperate with mediain in your company.</p>
+                        <div class="feature-area-wrapper">
+                            <div class="single-feature">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <g clip-path="url(#clip0_724_8705)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M22 5H25C25.53 5.00153 26.0378 5.21274 26.4125 5.58748C26.7873 5.96222 26.9985 6.47004 27 7V12H25V7H22V10H10V7H7V28H16V30H7C6.47004 29.9985 5.96222 29.7873 5.58748 29.4125C5.21274 29.0378 5.00153 28.53 5 28V7C5.00153 6.47004 5.21274 5.96222 5.58748 5.58748C5.96222 5.21274 6.47004 5.00153 7 5H10V4C10.0015 3.47004 10.2127 2.96222 10.5875 2.58748C10.9622 2.21274 11.47 2.00153 12 2H20C20.53 2.00153 21.0378 2.21274 21.4125 2.58748C21.7873 2.96222 21.9985 3.47004 22 4V5ZM12 8H20V4H12V8ZM29.2768 17.1325C29.7534 18.0131 30.002 18.9991 30 20.0004C29.9996 20.8427 29.8212 21.6755 29.4765 22.4441C29.1318 23.2127 28.6287 23.8998 28 24.4604V32.0004L24 30.1068L20 32.0004V24.4604C19.2536 23.7928 18.6862 22.9491 18.3495 22.0061C18.0127 21.063 17.9174 20.0507 18.072 19.0614C18.2267 18.0721 18.6266 17.1372 19.2351 16.342C19.8437 15.5467 20.6416 14.9165 21.5561 14.5086C22.4706 14.1007 23.4727 13.9282 24.4709 14.0068C25.4692 14.0854 26.4319 14.4126 27.2713 14.9585C28.1108 15.5045 28.8002 16.2518 29.2768 17.1325ZM24 27.8937L26 28.8404V25.6504C24.7075 26.1172 23.2925 26.1172 22 25.6504V28.8404L24 27.8937ZM21.7777 23.3263C22.4355 23.7658 23.2089 24.0004 24 24.0004C25.0605 23.9992 26.0772 23.5774 26.8271 22.8275C27.577 22.0776 27.9988 21.0609 28 20.0004C28 19.2093 27.7654 18.4359 27.3259 17.7781C26.8864 17.1203 26.2617 16.6076 25.5307 16.3049C24.7998 16.0021 23.9956 15.9229 23.2197 16.0773C22.4437 16.2316 21.731 16.6126 21.1716 17.172C20.6122 17.7314 20.2312 18.4441 20.0769 19.22C19.9225 19.996 20.0017 20.8002 20.3045 21.5311C20.6072 22.262 21.1199 22.8868 21.7777 23.3263Z" fill="#36D659" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M22 5H25C25.53 5.00153 26.0378 5.21274 26.4125 5.58748C26.7873 5.96222 26.9985 6.47004 27 7V12H25V7H22V10H10V7H7V28H16V30H7C6.47004 29.9985 5.96222 29.7873 5.58748 29.4125C5.21274 29.0378 5.00153 28.53 5 28V7C5.00153 6.47004 5.21274 5.96222 5.58748 5.58748C5.96222 5.21274 6.47004 5.00153 7 5H10V4C10.0015 3.47004 10.2127 2.96222 10.5875 2.58748C10.9622 2.21274 11.47 2.00153 12 2H20C20.53 2.00153 21.0378 2.21274 21.4125 2.58748C21.7873 2.96222 21.9985 3.47004 22 4V5ZM12 8H20V4H12V8ZM29.2768 17.1325C29.7534 18.0131 30.002 18.9991 30 20.0004C29.9996 20.8427 29.8212 21.6755 29.4765 22.4441C29.1318 23.2127 28.6287 23.8998 28 24.4604V32.0004L24 30.1068L20 32.0004V24.4604C19.2536 23.7928 18.6862 22.9491 18.3495 22.0061C18.0127 21.063 17.9174 20.0507 18.072 19.0614C18.2267 18.0721 18.6266 17.1372 19.2351 16.342C19.8437 15.5467 20.6416 14.9165 21.5561 14.5086C22.4706 14.1007 23.4727 13.9282 24.4709 14.0068C25.4692 14.0854 26.4319 14.4126 27.2713 14.9585C28.1108 15.5045 28.8002 16.2518 29.2768 17.1325ZM24 27.8937L26 28.8404V25.6504C24.7075 26.1172 23.2925 26.1172 22 25.6504V28.8404L24 27.8937ZM21.7777 23.3263C22.4355 23.7658 23.2089 24.0004 24 24.0004C25.0605 23.9992 26.0772 23.5774 26.8271 22.8275C27.577 22.0776 27.9988 21.0609 28 20.0004C28 19.2093 27.7654 18.4359 27.3259 17.7781C26.8864 17.1203 26.2617 16.6076 25.5307 16.3049C24.7998 16.0021 23.9956 15.9229 23.2197 16.0773C22.4437 16.2316 21.731 16.6126 21.1716 17.172C20.6122 17.7314 20.2312 18.4441 20.0769 19.22C19.9225 19.996 20.0017 20.8002 20.3045 21.5311C20.6072 22.262 21.1199 22.8868 21.7777 23.3263Z" fill="white" fill-opacity="0.2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_724_8705">
+                                                <rect width="32" height="32" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <p>Successful Graph</p>
+                            </div>
+                            <div class="single-feature">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7501 9.67433C20.9097 8.57942 18.8082 8.00102 16.6668 8.00003C13.4853 8.00365 10.4351 9.2691 8.18549 11.5187C5.93584 13.7684 4.67039 16.8185 4.66677 20H2.66677C2.66268 17.4879 3.33574 15.021 4.61513 12.859C5.89451 10.697 7.73294 8.91981 9.93699 7.71434C12.1411 6.50886 14.6293 5.91969 17.1399 6.0088C19.6504 6.09791 22.0906 6.86202 24.2037 8.22073L22.7501 9.67433ZM28.6668 9.414L27.2527 8L18.6858 16.5669C18.0761 16.1996 17.3785 16.0037 16.6668 16C15.8756 16 15.1023 16.2346 14.4445 16.6741C13.7867 17.1136 13.274 17.7384 12.9712 18.4693C12.6685 19.2002 12.5893 20.0044 12.7436 20.7804C12.898 21.5563 13.2789 22.269 13.8383 22.8284C14.3977 23.3878 15.1105 23.7688 15.8864 23.9231C16.6623 24.0775 17.4666 23.9983 18.1975 23.6955C18.9284 23.3928 19.5531 22.8801 19.9926 22.2223C20.4322 21.5645 20.6668 20.7911 20.6668 20C20.663 19.2882 20.4672 18.5906 20.0999 17.9809L28.6668 9.414ZM16.6668 22C16.2712 22 15.8845 21.8827 15.5556 21.6629C15.2267 21.4432 14.9704 21.1308 14.819 20.7654C14.6676 20.3999 14.628 19.9978 14.7052 19.6098C14.7824 19.2219 14.9728 18.8655 15.2526 18.5858C15.5323 18.3061 15.8886 18.1156 16.2766 18.0384C16.6645 17.9613 17.0667 18.0009 17.4321 18.1522C17.7976 18.3036 18.1099 18.56 18.3297 18.8889C18.5495 19.2178 18.6668 19.6044 18.6668 20C18.6662 20.5302 18.4552 21.0386 18.0803 21.4135C17.7054 21.7885 17.197 21.9994 16.6668 22ZM30.6668 20C30.6654 17.3279 29.8912 14.7133 28.4377 12.4712L26.9925 13.9165C28.0882 15.7566 28.6666 17.8584 28.6668 20H30.6668Z" fill="#36D659" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7501 9.67433C20.9097 8.57942 18.8082 8.00102 16.6668 8.00003C13.4853 8.00365 10.4351 9.2691 8.18549 11.5187C5.93584 13.7684 4.67039 16.8185 4.66677 20H2.66677C2.66268 17.4879 3.33574 15.021 4.61513 12.859C5.89451 10.697 7.73294 8.91981 9.93699 7.71434C12.1411 6.50886 14.6293 5.91969 17.1399 6.0088C19.6504 6.09791 22.0906 6.86202 24.2037 8.22073L22.7501 9.67433ZM28.6668 9.414L27.2527 8L18.6858 16.5669C18.0761 16.1996 17.3785 16.0037 16.6668 16C15.8756 16 15.1023 16.2346 14.4445 16.6741C13.7867 17.1136 13.274 17.7384 12.9712 18.4693C12.6685 19.2002 12.5893 20.0044 12.7436 20.7804C12.898 21.5563 13.2789 22.269 13.8383 22.8284C14.3977 23.3878 15.1105 23.7688 15.8864 23.9231C16.6623 24.0775 17.4666 23.9983 18.1975 23.6955C18.9284 23.3928 19.5531 22.8801 19.9926 22.2223C20.4322 21.5645 20.6668 20.7911 20.6668 20C20.663 19.2882 20.4672 18.5906 20.0999 17.9809L28.6668 9.414ZM16.6668 22C16.2712 22 15.8845 21.8827 15.5556 21.6629C15.2267 21.4432 14.9704 21.1308 14.819 20.7654C14.6676 20.3999 14.628 19.9978 14.7052 19.6098C14.7824 19.2219 14.9728 18.8655 15.2526 18.5858C15.5323 18.3061 15.8886 18.1156 16.2766 18.0384C16.6645 17.9613 17.0667 18.0009 17.4321 18.1522C17.7976 18.3036 18.1099 18.56 18.3297 18.8889C18.5495 19.2178 18.6668 19.6044 18.6668 20C18.6662 20.5302 18.4552 21.0386 18.0803 21.4135C17.7054 21.7885 17.197 21.9994 16.6668 22ZM30.6668 20C30.6654 17.3279 29.8912 14.7133 28.4377 12.4712L26.9925 13.9165C28.0882 15.7566 28.6666 17.8584 28.6668 20H30.6668Z" fill="white" fill-opacity="0.2" />
+                                    </svg>
+                                </div>
+                                <p>High Achievement</p>
+                            </div>
+                            <div class="single-feature">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                        <path d="M23.3333 4L18.3333 7.75V14.25L15.3333 12L10.3333 15.75V22.25L7.33325 20L2.33325 23.75V30H4.33325V24.75L7.33325 22.5L10.3333 24.75V30H12.3333V16.75L15.3333 14.5L18.3333 16.75V30H20.3333V8.75L23.3333 6.5L26.3333 8.75V30H28.3333V7.75L23.3333 4Z" fill="#36D659" />
+                                        <path d="M23.3333 4L18.3333 7.75V14.25L15.3333 12L10.3333 15.75V22.25L7.33325 20L2.33325 23.75V30H4.33325V24.75L7.33325 22.5L10.3333 24.75V30H12.3333V16.75L15.3333 14.5L18.3333 16.75V30H20.3333V8.75L23.3333 6.5L26.3333 8.75V30H28.3333V7.75L23.3333 4Z" fill="white" fill-opacity="0.2" />
+                                    </svg>
+                                </div>
+                                <p>Accuracy Improvement</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- appoinment satylke two left end -->
+                </div>
+                <div class="col-lg-6 col-md-10">
+                    <form action="/work-with-us" method="post" class="appoinment_form-1" id="work-with-us-form">
+                        <div class="signle-input">
+                            <label for="name">Full name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="signle-input">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" placeholder="Your email" required>
+                            <i class="fa-light fa-envelope"></i>
+                        </div>
+                        <div class="signle-input">
+                            <label for="website">Website (optional)</label>
+                            <input type="url" id="website" name="website" placeholder="yourwebsite.com">
+                            <i class="fa-light fa-globe"></i>
+                        </div>
+                        <div class="signle-input">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us Related keywordsabout your project or how you'd like to work with Mediain..." rows="4" required style="width: 100%; padding: 15px; border: 1px solid #e0e0e0; border-radius: 5px; font-family: inherit; font-size: 14px; resize: vertical; min-height: 100px; background: var(--body-bg); color: var(--body-color);"></textarea>
+                        </div>
+                        <button type="submit" class="rts-btn btn-primary-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="sape-area">
+            <img class="one" src="/static/images/service/shape/01.png" alt="shape">
+            <img class="two" src="/static/images/service/shape/02.png" alt="shape">
+            <img class="three" src="/static/images/service/shape/03.png" alt="shape">
+            <img class="four" src="/static/images/service/shape/04.png" alt="shape">
+        </div>
+    </div>
+    <!-- rts appoinment area end -->
+
+    <!-- rts counter up area start -->
+    <div class="ptb--165 counter-up-area-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <!-- singlee counter up twoi -->
+                    <div class="single-counter-up-two">
+                        <div class="icon">
+                            <i class="fa-solid fa-database" style="font-size: 48px; color: #36D659;"></i>
+                        </div>
+                        <div class="inmformation">
+                            <h2 class="title"><span class="counter">450</span>K</h2>
+                            <p>Injected Data</p>
+                        </div>
+                    </div>
+                    <!-- singlee counter up two end -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <!-- singlee counter up twoi -->
+                    <div class="single-counter-up-two">
+                        <div class="icon">
+                            <i class="fa-solid fa-user" style="font-size: 48px; color: #36D659;"></i>
+                        </div>
+                        <div class="inmformation">
+                            <h2 class="title"><span class="counter">347</span></h2>
+                            <p>Beta Registration</p>
+                        </div>
+                    </div>
+                    <!-- singlee counter up two end -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <!-- singlee counter up twoi -->
+                    <div class="single-counter-up-two">
+                        <div class="icon">
+                            <i class="fa-solid fa-location-dot" style="font-size: 48px; color: #36D659;"></i>
+                        </div>
+                        <div class="inmformation">
+                            <h2 class="title"><span class="counter">28</span></h2>
+                            <p>Supported Country</p>
+                        </div>
+                    </div>
+                    <!-- singlee counter up two end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts counter up area end -->
+
+    <!-- rts pricing area srart -->
+    <div class="rtws-pricing-area-start-two rts-section-gap bg-light-border-radious">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-one-center">
+                        <span class="pre skew-up">A little about us</span>
+                        <h2 class="title skew-up">Sign up for affordable <br> plans during beta.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-48 mt--0 justify-content-sm-center justify-content-md-start">
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <!-- single pricing area start -->
+                    <div class="single-pricing-area-two free-place">
+                        <div class="head-pricing">
+                            <span class="plane_name">Basic</span>
+                            <div class="doller-area">
+                                <h2 class="title">$5</h2>
+                                <span class="time">/ per month</span>
+                            </div>
+                            <p>Get an affordable subscription with early payment during beta.</p>
+                        </div>
+                        <div class="body">
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>30 Prompt</p>
+                            </div>
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>Free Chat</p>
+                            </div>
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>4 Module</p>
+                            </div>
+
+                        </div>
+                        <div class="footer">
+                            <a href="https://discord.gg/FFzfHbYSGX" class="rts-btn btn-primary-2">Buy now.</a>
+                            <p>$10 after beta.</p>
+                        </div>
+                    </div>
+                    <!-- single pricing area end -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <!-- single pricing area start -->
+                    <div class="single-pricing-area-two professional-place">
+                        <div class="head-pricing">
+                            <span class="plane_name">Professional</span>
+                            <div class="doller-area">
+                                <h2 class="title">$15</h2>
+                                <span class="time">/ per month</span>
+                            </div>
+                            <p>Get an affordable subscription with early payment during beta.</p>
+                        </div>
+                        <div class="body">
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>100 Prompt</p>
+                            </div>
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>Premium Chat</p>
+                            </div>
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>6 Module</p>
+                            </div>
+
+                        </div>
+                        <div class="footer">
+                            <a href="https://discord.gg/FFzfHbYSGX" class="rts-btn btn-primary-2">Buy now.</a>
+                            <p>$30 after beta.</p>
+                        </div>
+                    </div>
+                    <!-- single pricing area end -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <!-- single pricing area start -->
+                    <div class="single-pricing-area-two enterprise-place">
+                        <div class="head-pricing">
+                            <span class="plane_name">Enterprise</span>
+                            <div class="doller-area">
+                                <h2 class="title">$30</h2>
+                                <span class="time">/ per month</span>
+                            </div>
+                            <p>Get an affordable subscription with early payment during beta.</p>
+                        </div>
+                        <div class="body">
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>240 Prompt</p>
+                            </div>
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>Private Chat (personal)</p>
+                            </div>
+                            <div class="single-check">
+                                <i class="fa-regular fa-check"></i>
+                                <p>8+ Module</p>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <a href="https://discord.gg/FFzfHbYSGX" class="rts-btn btn-primary-2">Buy now.</a>
+                            <p>$60 after beta.</p>
+                        </div>
+                    </div>
+                    <!-- single pricing area end -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="button-text-bottom-area-pricing text-center">
+                        <p>Prices exclude any applicable taxes.</p>
+                        <a href="#" class="rts-btn btn-primary-4-border arrow-rotate">Compare all features <i class="fa-light fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-area">
+            <img src="/static/images/testimonials/shape/12.png" alt="shape" class="one">
+            <img src="/static/images/testimonials/shape/13.png" alt="shape" class="two">
+            <img src="/static/images/testimonials/shape/14.png" alt="shape" class="three">
+        </div>
+    </div>
+    <!-- rts pricing area end -->
+
+    <!-- rts footer start two -->
+    <div class="rts-footer-two bg-dark-color">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-top-area-two rts-section-gapBottom" style="display: flex; justify-content: center;">
+                        <ul class="social-area-one">
+                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mobile__breakpoint g-48 g-lg-0">
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">Company</h6>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">AI Research</a></li>
+                            <li><a href="#">We hire</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">AI Solutions</h6>
+                        <ul>
+                            <li><a href="#">Content Generation</a></li>
+                            <li><a href="#">Data Analytics</a></li>
+                            <li><a href="#">AI Automation</a></li>
+                            <li><a href="#">Machine Learning</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">AI Tools</h6>
+                        <ul>
+                            <li><a href="#">AI Assistant</a></li>
+                            <li><a href="#">Text Generator</a></li>
+                            <li><a href="#">Data Processor</a></li>
+                            <li><a href="#">AI Models</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">Support</h6>
+                        <ul>
+                            <li><a href="#">Help center</a></li>
+                            <li><a href="#">API Documentation</a></li>
+                            <li><a href="#">Developer Guide</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">Resources</h6>
+                        <ul>
+                            <li><a href="#">AI Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Whitepapers</a></li>
+                            <li><a href="#">AI News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="single-footer-wized-one">
+                        <h6 class="title">Legal</h6>
+                        <ul>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">AI Ethics</a></li>
+                            <li><a href="#">Data Usage</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb--80 pt--40">
+                <div class="col-lg-12">
+                    <div class="copyright-area-start area-two" style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>© 2025 Mediain, All right reserved.</p>
+                        <div style="text-align: center;">
+                            <a href="#">
+                                <img src="/static/images/logo/logo-one-dark.png" alt="Mediain Logo" style="height: 40px;">
+                            </a>
+                        </div>
+                        <ul style="display: flex; gap: 15px; margin: 0; list-style: none;">
+                            <li><a href="{{ url_for('privacyPolicy') }}">Privacy Policy</a></li>
+                            <li><a href="{{ url_for('terms') }}">Terms of service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts footer start two end -->
+
+    <!-- Success Modal for Quote Form -->
+    <div id="success-modal" class="success-modal-overlay" style="display: none;">
+        <div class="success-modal" style="position: relative;">
+            
+            <!-- Close button - positioned absolutely in top right -->
+            <div style="position: absolute; top: -15px; right: -15px; z-index: 10000;">
+                <button class="close-modal" id="close-success-modal" style="background: white; border: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Modal content -->
+            <div class="success-modal-header" style="text-align: center; margin-bottom: 20px;">
+                <div class="success-icon">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="30" fill="#22C55E"/>
+                        <path d="M18 30L26 38L42 22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="success-modal-body" style="text-align: center;">
+                <h3>Thanks for contact!</h3>
+                <p>Your message has been sent successfully. We'll get back to you soon!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quote Form Handler Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Handle Quote Form
+        const quoteForm = document.getElementById('quote-form');
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Clear form
+                    const emailInput = document.querySelector('#quote-form input[name="email"]');
+                    if (emailInput) emailInput.value = '';
+                    showQuoteModal();
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                    showQuoteModal(); // Show success even on fail
+                });
+            });
+        }
+        
+        // Handle Work with Us Form
+        const workWithUsForm = document.getElementById('work-with-us-form');
+        if (workWithUsForm) {
+            workWithUsForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Clear form
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('website').value = '';
+                    document.getElementById('message').value = '';
+                    showQuoteModal();
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                    showQuoteModal(); // Show success even on fail
+                });
+            });
+        }
+        
+        // Quote Modal functions
+        function showQuoteModal() {
+            const modal = document.getElementById('success-modal');
+            
+            if (!modal) {
+                return;
+            }
+            
+            modal.style.display = 'flex';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            modal.style.zIndex = '9999';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.classList.add('show');
+            
+            // Auto close after 5 seconds
+            setTimeout(function() {
+                hideQuoteModal();
+            }, 5000);
+        }
+        
+        function hideQuoteModal() {
+            const modal = document.getElementById('success-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('show');
+            }
+        }
+        
+        // Close modal handlers
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'close-success-modal') {
+                hideQuoteModal();
+            }
+            
+            if (e.target.classList.contains('success-modal-overlay')) {
+                hideQuoteModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('success-modal');
+                if (modal && modal.classList.contains('show')) {
+                    hideQuoteModal();
+                }
+            }
+        });
+    });
+    </script>
+
+{% endblock content %}

@@ -1,0 +1,262 @@
+{% extends './layout/layout.html' %}
+
+{% block content %}
+
+    <header class="header-two border-bottom header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-two-content-main">
+                        <a href="{{ url_for('index') }}" class="logo-area">
+                            <img class="light" src="/static/images/logo/logo-1.png" alt="logo">
+                                                         <img class="dark" src="/static/images/logo/logo-one-dark.png" alt="logo">
+                        </a>
+                        <nav class="main-nav-area">
+                            <ul class="list-unstyled fluxi-desktop-menu">
+                                <li class="menu-item">
+                                    <a href="{{ url_for('index') }}" class="main-element fluxi-dropdown-main-element">Home</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ url_for('free') }}" class="main-element fluxi-dropdown-main-element">API</a>
+                                </li>
+
+                                <li class="menu-item fluxi-has-dropdown">
+                                    <a href="#" class="fluxi-dropdown-main-element">Work</a>
+                                    <!-- Start Dropdown Menu -->
+                                    <ul class="fluxi-submenu list-unstyled menu-home">
+                                        <li class="nav-item"><a class="nav-link page" href="{{ url_for('caseStudies') }}">Case Studies</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ url_for('singleCaseStudies') }}">Case Studies Details</a></li>
+                                    </ul>
+                                    <!-- End Dropdown Menu -->
+                                </li>
+
+
+                                <li class="menu-item"><a class="main-element fluxi-dropdown-main-element" href="{{ url_for('contact') }}">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header-end-area">
+                            <a class="reqiest" href="#">Request a demo</a>
+                            <a href="#" class="rts-btn btn-primary-4">Contact sales</a>
+                            <div class="menu-btn" id="menu-btn">
+
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect width="20" height="2" fill="#1F1F25"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- about page banner area start -->
+    <div class="about-area-banner-inner rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-main-wrapper">
+                        <h1 class="title split-collab">
+                            A dedicated <br> <span>fluxi creative</span> <br> team
+                        </h1>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="banner-about-right">
+                        <p class="disc">
+                            Fluxi focus on helping you to make useful content more accessible with an ultimate goal for a good sharing profit as a content creator.
+                        </p>
+                        <p class="disc">
+                            We see more and more ads in search results and not enough care for the people who are actually creating content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about page banner area end -->
+
+    <!-- rts team area start -->
+    <div class="rts-team-area rts-section-gap2 inner">
+        <div class="container">
+            <div class="row">
+                <div class="title-style-one-center">
+                    <span class="pre skew-up">Our team</span>
+                    <h2 class="title skew-up">An experienced and <br>
+                        elite team</h2>
+                </div>
+            </div>
+            <div class="row g-5 pt--60">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- single team area start -->
+                    <div class="single-team-area-start">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/team/09.png" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <h6 class="title">Kevin Smith</h6>
+                            <span class="desig">Founder, CEO of Fluxi</span>
+                        </div>
+                    </div>
+                    <!-- single team area ends -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- single team area start -->
+                    <div class="single-team-area-start">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/team/10.png" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <h6 class="title">Ahmed Solary</h6>
+                            <span class="desig">Head of Digital Marketing</span>
+                        </div>
+                    </div>
+                    <!-- single team area ends -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- single team area start -->
+                    <div class="single-team-area-start">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/team/11.png" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <h6 class="title">Antonio Martin</h6>
+                            <span class="desig">UI/UX Designer</span>
+                        </div>
+                    </div>
+                    <!-- single team area ends -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- single team area start -->
+                    <div class="single-team-area-start">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/team/12.png" alt="team">
+                        </a>
+                        <div class="inner-content">
+                            <h6 class="title">Stefan Brice</h6>
+                            <span class="desig">Senior Developer</span>
+                        </div>
+                    </div>
+                    <!-- single team area ends -->
+                </div>
+            </div>
+        </div>
+        <div class="shape-area">
+            <img src="/static/images/service/shape/04.png" alt="" class="one">
+            <img src="/static/images/service/shape/13.png" alt="" class="two">
+            <img src="/static/images/service/shape/06.png" alt="" class="three">
+            <img src="/static/images/service/shape/14.png" alt="" class="four">
+        </div>
+    </div>
+    <!-- rts team area end -->
+
+    <div class="expart-team-area-7 rts-section-gapTop rts-section-gap2Bottom inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-one-center">
+                        <span class="pre skew-up text-center">Our Team</span>
+                        <h2 class="title skew-up text-center">Meet the brilliant minds behind our <br> successful campaigns</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-48 mt--10">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <div class="thumbnail">
+                            <img src="/static/images/team/01.png" alt="team">
+                        </div>
+                        <h6 class="title">Kevin Smith</h6>
+                        <span class="designation">Founder &amp; CEO</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <a href="#" class="thumbnail">
+                            <img src="/static/images/team/02.png" alt="team">
+                        </a>
+                        <h6 class="title">David Daily</h6>
+                        <span class="designation">Head of Production</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <div class="thumbnail">
+                            <img src="/static/images/team/03.png" alt="team">
+                        </div>
+                        <h6 class="title">Taylor Johnson</h6>
+                        <span class="designation">Head of Marketing</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <div class="thumbnail">
+                            <img src="/static/images/team/04.png" alt="team">
+                        </div>
+                        <h6 class="title">Kevin Smith</h6>
+                        <span class="designation">Founder &amp; CEO</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <div class="thumbnail">
+                            <img src="/static/images/team/05.png" alt="team">
+                        </div>
+                        <h6 class="title">Sarah Smith</h6>
+                        <span class="designation">Project Manager</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <div class="thumbnail">
+                            <img src="/static/images/team/06.png" alt="team">
+                        </div>
+                        <h6 class="title">Rick James</h6>
+                        <span class="designation">Creative Director</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <div class="thumbnail">
+                            <img src="/static/images/team/07.png" alt="team">
+                        </div>
+                        <h6 class="title">Allen Chang</h6>
+                        <span class="designation">Development Lead</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <!-- single teama area start -->
+                    <div class="single-team-area-7">
+                        <div class="thumbnail">
+                            <img src="/static/images/team/08.png" alt="team">
+                        </div>
+                        <h6 class="title">David Larsson</h6>
+                        <span class="designation">Fun Atmosphere</span>
+                    </div>
+                    <!-- single teama area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- subscription area start -->
+    {% include  './partials/subscription.html' %}
+    <!-- subscription area end -->
+
+{% endblock content %}
