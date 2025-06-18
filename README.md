@@ -1,8 +1,14 @@
 # Mediain AI - Medical Image Analysis Platform
 
+![Mediain AI Logo](logo.jpg)
+
 Mediain AI is a comprehensive artificial intelligence platform designed for medical image analysis and diagnostic support. Our platform specializes in four critical medical areas with high-accuracy AI models.
 
+![Mediain AI Platform](medain-foto.jpg)
+
 ## 🔬 AI Models & Capabilities
+
+![AI Models Overview](models.jpg)
 
 ### 1. Pneumonia Detection
 - **Accuracy**: 99.9%
